@@ -1,0 +1,25 @@
+# Force primary language for source folders to Dart so GitHub shows Dart as the repo language
+lib/** linguist-language=Dart
+test/** linguist-language=Dart
+pubspec.yaml linguist-language=YAML
+
+# Mark generated/platform files and binary assets as vendored/generated so they don't skew language stats
+build/** linguist-vendored=true
+android/** linguist-vendored=true
+ios/** linguist-vendored=true
+macos/** linguist-vendored=true
+windows/** linguist-vendored=true
+linux/** linguist-vendored=true
+# Vendoring the entire web folder avoids single HTML files boosting HTML language share
+web/** linguist-vendored=true
+images/** linguist-vendored=true
+*.png linguist-vendored=true
+
+# Common tool/generated folders
+.dart_tool/** linguist-vendored=true
+.gradle/** linguist-vendored=true
+.idea/** linguist-vendored=true
+
+
+# If you want to explicitly hide other generated files, add them here
+# e.g. .dart_tool/** linguist-vendored=true
